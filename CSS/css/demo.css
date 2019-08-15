@@ -1,0 +1,77 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background: url("../img/register_bg.png") center no-repeat;
+    padding-top: 25px;
+}
+
+.main_div{
+    width: 900px;
+    height: 500px;
+    background: white;
+    /*居中显示*/
+    margin: 20px auto auto;
+    border: 8px #eeeeee solid;
+}
+.div_left{
+    float: left;
+    margin: 15px;
+}
+/*.div_left > p:first-child 代表 id为 div_left标签下的第一个是<p>标签的子标签*/
+.div_left > p:first-child{
+    color: #FFD026;
+    font-size: 20px;
+}
+/*.div_left > p:last-child 代表 id为 div_left标签下的最后一个个是<p>标签的子标签*/
+/*last-child 和 first-child这种写法 也可以通过 给标签定义 id来实现*/
+.div_left > p:last-child{
+    color:#A6A6A6;
+    font-size: 20px;
+}
+
+.div_center{
+    float: left;
+    margin: 15px;
+}
+
+.left_td{
+    width: 100px;
+    height: 45px;
+    text-align: right;
+    color: #A6A6A6;
+    font-size: 15px;
+}
+
+.right_td{
+    padding-left: 45px;
+}
+
+#username,#password,#email,#tel,#name,#code,#birthday{
+    height: 30px;
+    width: 250px;
+    border: #eeeeee 1px solid;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.div_right{
+    float: right;
+    margin: 15px;
+}
+
+.login_remind{
+    font-size: 20px;
+}
+
+.div_right p a{
+    color: pink;
+}
+.register{
+    width: 150px;
+    height: 40px;
+    background-color: #FFD026;
+    border: 1px solid #FFD026 ;
+}

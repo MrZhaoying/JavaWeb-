@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册界面</title>
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body{
+            background: url("img/register_bg.png") center no-repeat;
+            padding-top: 25px;
+        }
+
+        .main_div{
+            width: 900px;
+            height: 500px;
+            background: white;
+            /*居中显示*/
+            margin: 20px auto auto;
+            border: 8px #eeeeee solid;
+        }
+        .div_left{
+            float: left;
+            margin: 15px;
+        }
+        /*.div_left > p:first-child 代表 id为 div_left标签下的第一个是<p>标签的子标签*/
+        .div_left > p:first-child{
+            color: #FFD026;
+            font-size: 20px;
+        }
+        /*.div_left > p:last-child 代表 id为 div_left标签下的最后一个个是<p>标签的子标签*/
+        /*last-child 和 first-child这种写法 也可以通过 给标签定义 id来实现*/
+        .div_left > p:last-child{
+            color:#A6A6A6;
+            font-size: 20px;
+        }
+
+        .div_center{
+            float: left;
+            margin: 15px;
+        }
+
+        .left_td{
+            width: 100px;
+            height: 45px;
+            text-align: right;
+            color: #A6A6A6;
+            font-size: 15px;
+        }
+
+        .right_td{
+            padding-left: 45px;
+        }
+
+        #username,#password,#email,#tel,#name,#code,#birthday{
+            height: 30px;
+            width: 250px;
+            border: #eeeeee 1px solid;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        .div_right{
+            float: right;
+            margin: 15px;
+        }
+
+        .login_remind{
+            font-size: 20px;
+        }
+
+        .div_right p a{
+            color: pink;
+        }
+        .register{
+            width: 150px;
+            height: 40px;
+            background-color: #FFD026;
+            border: 1px solid #FFD026 ;
+        }
+    </style>
+
+<!--外链 CSS 方式-->
+<!--    <link rel="stylesheet" href="css/demo.css">-->
+</head>
+<body>
+<!--主 div-->
+<div class="main_div">
+    <div class="div_left">
+        <p>新用户注册</p>
+        <p>USER REGISTER</p>
+    </div>
+    <div class="div_center">
+        <form>
+            <table>
+                <tr>
+                    <td class="left_td">
+                        <label for="username">用户名</label>
+                    </td>
+                    <td class="right_td">
+                        <input type="text" name="username" id="username"  placeholder="请输入用户名">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left_td">
+                        <label for="password">密码</label>
+                    </td>
+                    <td class="right_td">
+                        <input type="password" name="password" id="password" placeholder="请输入密码">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left_td">
+                        <label for="email">邮箱</label>
+                    </td>
+                    <td class="right_td">
+                        <input type="email" name="email" id="email" placeholder="请输入邮箱">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left_td">
+                        <label for="name">姓名</label>
+                    </td>
+                    <td class="right_td">
+                        <input type="text" name="name" placeholder="请输入姓名" id="name">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left_td">
+                        <label for="tel">手机号</label>
+                    </td>
+                    <td class="right_td">
+                        <input type="text" name="tel" placeholder="请输入电话号" id="tel">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left_td">
+                        性别
+                    </td>
+                    <td class="right_td">
+                        <input type="radio" name="gender" value="male" > 男
+                        <input type="radio" name="gender" value="female"> 女
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left_td">
+                        出生日期
+                    </td>
+                    <td class="right_td">
+                        <input name="birthday" type="date" id="birthday">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left_td">
+                        <label for="code">验证码</label>
+                    </td>
+                    <td class="right_td">
+                        <input type="text" name="code" id="code">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="注册" class="register">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+
+    <div class="div_right">
+        <p class="login_remind">
+            已有账号? <a href="#">立即登录</a>
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
