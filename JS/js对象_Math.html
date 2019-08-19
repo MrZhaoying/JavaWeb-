@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math 对象</title>
+</head>
+<body>
+    <script>
+
+        //圆周率
+        document.write(Math.PI + "<br>");
+        //随机数 0 - 1
+        document.write(Math.random() + "<br>");
+
+        //四舍五入
+        document.write(Math.round(5.9) + "<br>");
+
+        //练习题
+        //取 0 - 100之间的随机整数
+        //先获取 0-1之间的随机数, 再乘以100
+        var count = Math.random() * 100;
+        //然后对 乘以100 的小数 取整,得到 0-100之间的整数
+
+        document.write(Math.ceil(count) + "<br>");
+
+        //向下取整
+        document.write(Math.floor(count) + 1 + "<br>");
+
+
+
+        //更多函数方法请查看 文档
+    </script>
+    
+</body>
+</html>

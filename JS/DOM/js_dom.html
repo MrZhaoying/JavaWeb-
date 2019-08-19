@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单理解Dom</title>
+</head>
+<body>
+
+    <img id="light" src="../../标签学习/image/banner_1.jpg">
+
+    <script>
+      // document.getElementById 根据id 获取某个元素对象
+      var light = document.getElementById("light");
+
+      
+      //获取到元素后绑定事件 onclick是学习到的第一个事件, 点击事件
+      var flag = true;
+      light.onclick = function(){
+        if(flag){
+            light.src = "../../标签学习/image/banner_2.jpg";
+            flag = false;
+         }else{
+            light.src = "../../标签学习/image/banner_1.jpg";
+            flag = true;
+         }
+      };
+
+
+    //   function imageClick() {
+    //     if(flag){
+    //         light.src = "../../标签学习/image/banner_2.jpg";
+    //         flag = false;
+    //      }else{
+    //         light.src = "../../标签学习/image/banner_1.jpg";
+    //         flag = true;
+    //      }
+    //   }
+    </script>
+    
+</body>
+</html>

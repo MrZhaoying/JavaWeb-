@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>global对象</title>
+    <!--Global - 全局对象 -->
+    <!-- 在Global对象中封装的方法不需要实例可以直接调用 -->
+</head>
+<body>
+    <script>
+        // 典型的 Global对象方法, URL的编解码方法
+
+        // var str = "看老虎财经";
+        // var encodStr =  encodeURI(str);
+        // alert(encodStr);
+        // var decodStr = decodeURI(encodStr);
+        // alert(decodStr);
+
+        // encodeURIComponent 和 decodeURIComponent 编解码的字数更多
+        var str = "看老虎财经";
+        var encodStr =  encodeURIComponent(str);
+        alert(encodStr);
+        var decodStr = decodeURIComponent(encodStr);
+        alert(decodStr);
+
+        // parseInt()方法 将字符串转换成数字, 如果字符串中并不是每一个都是数字, 只转换到数字
+
+        var str1 = "123abc";
+        var str1_num = parseInt(str1);
+        
+        alert(str1_num);
+
+
+    
+    
+    </script>
+    
+</body>
+</html>

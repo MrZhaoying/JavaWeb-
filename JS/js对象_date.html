@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>date对象</title>
+
+    
+</head>
+<body>
+
+    <p id="demo">点击后显示星期几</p>
+    <button onclick="getWeekDay()">点我</button>
+    <br>
+
+    <script>
+            var date = new Date();
+            document.write(date + "<br>");
+
+            var str = date.toLocaleString();
+            document.write(str);
+
+            function getWeekDay(){
+                var weeks = new Array(7);
+                var day = new Date();
+                weeks[0] = "星期日";
+                weeks[1] = "星期一";
+                weeks[2] = "星期二";
+                weeks[3] = "星期三";
+                weeks[4] = "星期四";
+                weeks[5] = "星期五";
+                weeks[6] = "星期六";
+                var x = document.getElementById("demo");
+                x.innerHTML=weeks[day.getDay()];
+
+
+                document.write(day.getDay() + "<br>");
+
+                //获取日期
+                document.write(day.getDate() + "<br>");
+                //获取时间戳
+                document.write(day.getTime());//时间戳
+            }
+        </script>   
+
+
+
+ 
+    
+</body>
+</html>

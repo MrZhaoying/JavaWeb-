@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+</head>
+<body>
+    <script>
+
+        //两种创建方式
+        var reg = new RegExp("\w{6,12}$");
+        
+        var reg2 = /^\w{6,12}$/;
+
+        alert(reg);
+
+        alert(reg2);
+
+        // 方法 test 调用 可以验证
+        var username = "zhangsan";
+
+        var flag = reg2.test(username);
+        alert(flag);
+
+        
+
+
+
+    
+    </script>
+    
+</body>
+</html>
