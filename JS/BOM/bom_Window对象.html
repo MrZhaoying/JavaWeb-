@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOM - Window对象</title>
+</head>
+<body>
+
+
+    <input id="openBtn" type="button" value="打开窗口">
+    <input id="closeBtn" type="button" value="关闭窗口">
+
+    <input id="onceBtn" type="button" value="单次定时关闭">
+
+    <input id="repeatBtn" type="button" value="重复定时停止">
+
+    <script>
+
+        /*
+        // 1. Window对象弹出的方法
+             alert 提示框, confirm 确认框, prompt 输入框
+
+            var str = "Ying";
+
+            alert(str);
+
+            var flag = confirm("你已经决定了吗");
+            
+            if (flag){
+                alert("已经订好了");
+            }else{
+                alert("我需要再想想");
+            }
+
+            var prom = prompt("请输入内容");
+
+            if (prom){
+                alert(prom);
+            }else{
+                
+            }
+
+            */
+             
+            
+            //打开, 关闭方法 open(), close();
+            var openBtn = document.getElementById("openBtn");
+
+            var newWindow;
+            openBtn.onclick = function(){
+                //open()方法 返回的就是新窗口
+              newWindow = open("www.baidu.com");
+            };
+
+            var closeBtn = document.getElementById("closeBtn");
+            closeBtn.onclick = function(){
+                //如果直接调用 close()方法, 会直接关闭当前窗口, close() 等于 window.close(); 谁调用就关闭谁
+                // window.close();
+                // close();
+                newWindow.close();
+            };
+            
+
+            //定时器相关的方法 setTimeOut(); clearTimeOut; setInterval();
+            //一次性定时器
+
+
+           var onceTime = setTimeout(() => {
+                alert("Boom~~~");
+            }, 2);
+
+            var onceBtn = document.getElementById("onceBtn");
+            // 关闭定时器
+            onceBtn.onclick = function (){
+                clearTimeout(onceTime);
+            }
+
+            //循环定时
+          var repeatTime = setInterval(funAlert, 5000);
+          var repeatBtn = document.getElementById("repeatBtn");
+          //关闭定时器
+          repeatBtn.onclick = function (){
+              clearInterval(repeatTime);
+          }
+
+        function funAlert(){
+            alert("boom ---");
+        }
+
+    </script>
+    
+</body>
+</html>

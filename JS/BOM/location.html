@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location对象</title>
+</head>
+<body>
+
+    <!-- location 地址栏对象 -->
+    <button id="reload">刷新</button>
+
+    <input id="tobaidu" type="button" value="去百度">
+
+    <script>
+        var button = document.getElementById("reload");
+        button.onclick = function(){
+            //刷新
+            location.reload();
+        }
+
+        var tobaidu = document.getElementById("tobaidu");
+
+        //href属性: 当前界面的url
+        tobaidu.onclick = function (){
+            //设置当前界面的url
+            location.href = "https://www.baidu.com";
+        }
+
+    </script>
+    
+</body>
+</html>

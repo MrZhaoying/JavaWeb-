@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图案例</title>
+</head>
+<body> 
+
+    <img id="img" width="100%" src="../../标签学习/image/banner_1.jpg">
+
+    <script>
+
+        var index = 1;
+        function imageChange(){
+
+            index++;
+            var img = document.getElementById("img");
+            if(index > 3){
+                index = 1;
+            }
+            
+            img.src = "../../标签学习/image/banner_"+index+".jpg";
+        }
+
+
+        //通过定时器 做图片切换
+        setInterval(() => {
+            imageChange();
+        }, 3000);
+    
+    </script>
+</body>
+</html>

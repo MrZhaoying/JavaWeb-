@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自动跳转首页案例</title>
+
+    <style>
+        span{
+            color: brown;
+        }
+
+        p{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <p>
+        <span id="time">5</span>秒后跳转回到首页
+    </p>
+
+    <script>
+
+        var timeCount = 5;
+        var time = document.getElementById("time");
+        setInterval(() => {
+            timeCount --;
+            if(timeCount == 0){
+                //重新设置界面URL
+                location.href = "https://www.baidu.com";
+            }
+
+            time.innerHTML = timeCount;
+        }, 1000);
+    </script>
+    
+</body>
+</html>
