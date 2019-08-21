@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态添加表格</title>
+
+    <style>
+        div{
+            text-align: center;
+        }
+        table{
+            border: 1px black solid;
+            width: 600px;
+            margin: auto;
+        }
+        td,th{
+            border: 1px solid;
+            text-align: center;
+ 
+        }
+        p{
+            text-align: center;
+        }
+    
+    
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="请输入编号" id="id">
+        <input type="text" placeholder="请输入性别" id="sex">
+        <input type="text" placeholder="请输入姓名" id="name">
+        <input type="button" value="添加" id="btn_add">
+    </div>
+
+    <p>学生信息表</p>
+    <table>
+
+        <tr>
+            <td>编号</td>
+            <td>性别</td>
+            <td>姓名</td>
+            <td>操作</td>
+        </tr>
+
+        <tr>
+            <td>01</td>
+            <td>男</td>
+            <td>司马懿</td>
+            <td>
+                <a href="javascript:void();" onclick="delTr(this)">删除</a>
+            </td>
+        </tr>
+
+        <tr>
+                <td>02</td>
+                <td>女</td>
+                <td>孙尚香</td>
+                <td>
+                    <a href="javascript:void();" onclick="delTr(this)">删除</a>
+                </td>
+        </tr>
+ 
+        <tr>
+                <td>03</td>
+                <td>男</td>
+                <td>孔明</td>
+                <td>
+                    <a href="javascript:void();" onclick="delTr(this)">删除</a>
+                </td>
+        </tr>
+
+    </table>
+     <!-- 通过 DOM 实现动态添加删除表格 -->
+    <script>
+
+        document.getElementById("btn_add").onclick = function(){
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var sex = document.getElementById("sex").value;
+
+            var td_id = document.createElement("td");
+            var text_id = document.createTextNode(id);
+            td_id.appendChild(text_id);
+
+            var td_name = document.createElement("td");
+            var text_name = document.createTextNode(name);
+            td_name.appendChild(text_name);
+
+            var td_sex = document.createElement("td");
+            var text_sex = document.createTextNode(sex);
+            td_sex.appendChild(text_sex);
+
+            var td_del = document.createElement("td");
+            var a_del = document.createElement("a");
+            //设置属性
+            a_del.setAttribute("href","javascript:void();");
+            a_del.setAttribute("onclick","delTr(this)");
+            //创建 textnode值
+            var text_a = document.createTextNode("删除");
+            a_del.appendChild(text_a);
+            td_del.appendChild(a_del);
+
+
+            var tr = document.createElement("tr");
+            tr.appendChild(td_id);
+            tr.appendChild(td_sex);
+            tr.appendChild(td_name);
+            tr.appendChild(td_del);
+
+            var table = document.getElementsByTagName("table")[0];
+            table.appendChild(tr);
+        }
+
+        function delTr(obj){
+            //通过parentNode 父节点去向上获取 元素 
+           var table = obj.parentNode.parentNode.parentNode;
+           var tr = obj.parentNode.parentNode;
+           table.removeChild(tr);
+        }
+
+
+    </script>
+
+    
+</body>
+</html>

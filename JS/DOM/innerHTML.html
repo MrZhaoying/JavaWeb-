@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>innerHTML</title>
+
+    <style>
+            div{
+                text-align: center;
+            }
+            table{
+                border: 1px black solid;
+                width: 600px;
+                margin: auto;
+            }
+            td,th{
+                border: 1px solid;
+                text-align: center;
+     
+            }
+            p{
+                text-align: center;
+            }
+        </style>
+</head>
+<body>
+    
+        <div>
+                <input type="text" placeholder="请输入编号" id="id">
+                <input type="text" placeholder="请输入性别" id="sex">
+                <input type="text" placeholder="请输入姓名" id="name">
+                <input type="button" value="添加" id="btn_add">
+        </div>
+        
+            <p>学生信息表</p>
+            <table>
+        
+                <tr>
+                    <td>编号</td>
+                    <td>性别</td>
+                    <td>姓名</td>
+                    <td>操作</td>
+                </tr>
+        
+                <tr>
+                    <td>01</td>
+                    <td>男</td>
+                    <td>司马懿</td>
+                    <td>
+                        <a href="javascript:void();" onclick="delTr(this)">删除</a>
+                    </td>
+                </tr>
+        
+                <tr>
+                        <td>02</td>
+                        <td>女</td>
+                        <td>孙尚香</td>
+                        <td>
+                            <a href="javascript:void();" onclick="delTr(this)">删除</a>
+                        </td>
+                </tr>
+         
+                <tr>
+                        <td>03</td>
+                        <td>男</td>
+                        <td>孔明</td>
+                        <td>
+                            <a href="javascript:void();" onclick="delTr(this)">删除</a>
+                        </td>
+                </tr>
+        
+            </table>
+
+
+    <!-- 通过 innerHTML来实现 动态添加删除表格 -->
+    <script>
+
+          document.getElementById("btn_add").onclick = function(){
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var sex = document.getElementById("sex").value;
+
+            var table = document.getElementsByTagName("table")[0];
+            table.innerHTML += 
+            "<tr>\n" +
+                        "<td>"+id+"</td>" +
+                        "<td>"+sex+"</td>" + 
+                        "<td>"+name+"</td>" +
+                        "<td> <a href=\"javascript:void();\" onclick=\"delTr(this)\">删除</a></td>"+
+            "</tr>";
+          }
+
+          function delTr(obj){
+              var table = obj.parentNode.parentNode.parentNode;
+              var tr = obj.parentNode.parentNode;
+              table.removeChild(tr);
+          }
+    
+    
+    
+    </script>
+</body>
+</html>
